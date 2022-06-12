@@ -5,5 +5,4 @@ export const routerPath = {
   // Auth
   AUTH: `auth`,
   LOGIN: `login`,
-  REGISTER: `register`,
 };
