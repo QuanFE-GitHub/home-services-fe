@@ -1,20 +1,24 @@
-import { Routes, Route } from 'react-router-dom';
-
-import CustomRouter from './components/customRouter';
-import { authRoutes } from './routes/routes';
-import { history } from './utils/history';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/components/login';
+import Customer from './pages/admin/customer';
+import Services from './pages/admin/services/Services';
+import ListService from './pages/admin/services/components/ListService';
+import ServicesDetail from './pages/admin/services/components/ServicesDetail';
+import Home from './pages/user/home/Home';
 
 function App() {
   return (
-    <CustomRouter history={history}>
+    <Router>
       <Routes>
-        <div className='App'>
-          {authRoutes.map((route, idx) => {
-            return <Route key={idx} index={route.index ?? false} path={route.path} element={route.component}></Route>;
-          })}
-        </div>
+        <Route path='/' element={<Home />} />
+        <Route path='login' element={<Login />} />
+        <Route path='services' element={<Services />}>
+          <Route path='list' element={<ListService />} />
+          <Route path=':id' element={<ServicesDetail />} />
+        </Route>
+        <Route path='users' element={<Customer />} />
       </Routes>
-    </CustomRouter>
+    </Router>
   );
 }
 
