@@ -3,14 +3,30 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
+import loginBanner from '../../../assets/images/loginBanner.jpg';
+
+import { Accounts } from '../../../data/AccountData';
+
 import './Login.scss';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const schema = yup.object().shape({
-  email: yup.string().required('Vui lòng nhập email').max(10, 'Email tối đa 10 ký tự'),
-  password: yup.string().required('Vui lòng nhập password'),
+  email: yup
+    .string()
+    .required('Vui lòng nhập email')
+    .matches(/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/, 'Sai định dạng email'),
+  password: yup
+    .string()
+    .required('Vui lòng nhập password')
+    .matches(
+      /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/,
+      'Mật khẩu bao gồm chữ in hoa, chữ thường, số, ký tự đặc biệt và ít nhất 8 ký tự.'
+    ),
 });
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -20,16 +36,20 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    Accounts.map((account, idx) => {
+      if (account.email === data.email && account.password === data.password) {
+        navigate('/services');
+      } else {
+        return alert('Tai khoan hoac mat khau khong dung.');
+      }
+      return console.log(data);
+    });
   };
 
   return (
     <section id='login' className='loginContainer'>
       <div className='loginBanner'>
-        <img
-          src='https://images.unsplash.com/photo-1652650445101-3bb4f755b67c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80'
-          alt='loginBanner'
-        />
+        <img src={loginBanner} alt='loginBanner' />
       </div>
       <div className='loginBox'>
         <div className={`loginContent`}>
