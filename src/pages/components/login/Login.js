@@ -1,13 +1,27 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
 import './Login.scss';
+
+const schema = yup.object().shape({
+  username: yup.string().required('Vui lòng nhập username').max(20, 'username tối đa 20 ký tự'),
+  password: yup.string().required('Vui lòng nhập password').max(20, 'username tối đa 20 ký tự'),
+});
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    navigate(`/services`);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const onSubmit = (data) => {
+    console.log(data);
     return;
   };
   return (
@@ -24,23 +38,24 @@ const Login = () => {
             Welcome <br /> to Home Services
           </h1>
           <h3 className='loginRole'>Admin</h3>
-          <form action='POST' className='loginForm' onSubmit={onSubmit}>
+          <form className='loginForm' onSubmit={handleSubmit(onSubmit)}>
             <div className='loginFormGroup'>
               <label htmlFor='email' className='loginLabel'>
                 Email
               </label>
               <div className='loginInput'>
-                <input type='email' id='email' name='email' required />
+                <input type='text' id='email' name='email' {...register('email')} />
               </div>
-              <span className={`loginValidate`}>{`Email invalid`}</span>
+              {errors.username && <p className='loginValidate'>{errors.username?.message}</p>}
             </div>
             <div className='loginFormGroup'>
               <label htmlFor='password' className='loginLabel'>
                 Password
               </label>
               <div className='loginInput'>
-                <input type='password' id='password' name='password' required />
+                <input type='password' id='password' name='password' {...register('password')} />
               </div>
+              {errors.password && <p className='loginValidate'>{errors.password?.message}</p>}
             </div>
             <div className='loginForgot'>
               <span>Forgot Password</span>
