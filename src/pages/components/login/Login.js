@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -7,23 +6,23 @@ import * as yup from 'yup';
 import './Login.scss';
 
 const schema = yup.object().shape({
-  username: yup.string().required('Vui lòng nhập username').max(20, 'username tối đa 20 ký tự'),
-  password: yup.string().required('Vui lòng nhập password').max(20, 'username tối đa 20 ký tự'),
+  email: yup.string().required('Vui lòng nhập email').max(10, 'Email tối đa 10 ký tự'),
+  password: yup.string().required('Vui lòng nhập password'),
 });
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   const onSubmit = (data) => {
     console.log(data);
-    return;
   };
+
   return (
     <section id='login' className='loginContainer'>
       <div className='loginBanner'>
@@ -46,7 +45,7 @@ const Login = () => {
               <div className='loginInput'>
                 <input type='text' id='email' name='email' {...register('email')} />
               </div>
-              {errors.username && <p className='loginValidate'>{errors.username?.message}</p>}
+              {errors.email && <p className='loginValidate'>{errors.email?.message}</p>}
             </div>
             <div className='loginFormGroup'>
               <label htmlFor='password' className='loginLabel'>
