@@ -3,25 +3,19 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import loginBanner from '../../../assets/images/loginBanner.jpg';
+import { regexEmail, regexPassword } from '../../../utils/constants';
 
 import { Accounts } from '../../../data/AccountData';
 
 import './Login.scss';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const schema = yup.object().shape({
-  email: yup
-    .string()
-    .required('Vui lòng nhập email')
-    .matches(/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/, 'Sai định dạng email'),
+  email: yup.string().required('Vui lòng nhập email').matches(regexEmail, 'Sai định dạng email'),
   password: yup
     .string()
     .required('Vui lòng nhập password')
-    .matches(
-      /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/,
-      'Mật khẩu bao gồm chữ in hoa, chữ thường, số, ký tự đặc biệt và ít nhất 8 ký tự.'
-    ),
+    .matches(regexPassword, 'Mật khẩu bao gồm chữ in hoa, chữ thường, số, ký tự đặc biệt và ít nhất 8 ký tự.'),
 });
 
 const Login = () => {
@@ -47,45 +41,40 @@ const Login = () => {
   };
 
   return (
-    <section id='login' className='loginContainer'>
-      <div className='loginBanner'>
-        <img src={loginBanner} alt='loginBanner' />
+    <form className='loginForm' onSubmit={handleSubmit(onSubmit)}>
+      <div className='loginFormGroup'>
+        <label htmlFor='email' className='loginLabel'>
+          Email
+        </label>
+        <input
+          className={`loginInputTxt ${errors.email && 'loginInputTxtError'}`}
+          type='text'
+          id='email'
+          name='email'
+          {...register('email')}
+        />
+        {errors.email && <p className='loginValidate'>{errors.email?.message}</p>}
       </div>
-      <div className='loginBox'>
-        <div className={`loginContent`}>
-          <h1 className='loginTitle'>
-            Welcome <br /> to Home Services
-          </h1>
-          <h3 className='loginRole'>Admin</h3>
-          <form className='loginForm' onSubmit={handleSubmit(onSubmit)}>
-            <div className='loginFormGroup'>
-              <label htmlFor='email' className='loginLabel'>
-                Email
-              </label>
-              <div className='loginInput'>
-                <input type='text' id='email' name='email' {...register('email')} />
-              </div>
-              {errors.email && <p className='loginValidate'>{errors.email?.message}</p>}
-            </div>
-            <div className='loginFormGroup'>
-              <label htmlFor='password' className='loginLabel'>
-                Password
-              </label>
-              <div className='loginInput'>
-                <input type='password' id='password' name='password' {...register('password')} />
-              </div>
-              {errors.password && <p className='loginValidate'>{errors.password?.message}</p>}
-            </div>
-            <div className='loginForgot'>
-              <span>Forgot Password</span>
-            </div>
-            <div className='loginBtn'>
-              <input type='submit' value='Sign In' />
-            </div>
-          </form>
-        </div>
+      <div className='loginFormGroup'>
+        <label htmlFor='password' className='loginLabel'>
+          Password
+        </label>
+        <input
+          className={`loginInputTxt ${errors.password && 'loginInputTxtError'}`}
+          type='password'
+          id='password'
+          name='password'
+          {...register('password')}
+        />
+        {errors.password && <p className='loginValidate'>{errors.password?.message}</p>}
       </div>
-    </section>
+      <div className='loginForgot'>
+        <span>Forgot Password</span>
+      </div>
+      <div className='loginBtn'>
+        <input type='submit' value='Sign In' />
+      </div>
+    </form>
   );
 };
 
