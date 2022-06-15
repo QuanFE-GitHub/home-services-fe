@@ -1,5 +1,6 @@
-import Login from '../pages/components/login';
-import ForgotPassword from '../pages/components/forgotPassword';
+import Login from 'src/pages/auth/login/index';
+import ForgotPassword from 'src/pages/auth/forgotPassword/index';
+import NewPassword from 'src//pages/auth/newPassword/index';
 
 export const routerPaths = {
   ADMIN: 'admin',
@@ -20,6 +21,7 @@ export const routerPaths = {
 
 export const exactRouter = {
   // Auth
+  auth: `${routerPaths.AUTH}`,
   signIn: `${routerPaths.AUTH}/${routerPaths.LOGIN}`,
   forgotPassword: `${routerPaths.AUTH}/${routerPaths.FORGOT_PASSWORD}`,
 
@@ -35,7 +37,13 @@ export const authRoutes = [
     component: Login,
   },
   {
+    index: false,
     path: `${routerPaths.FORGOT_PASSWORD}`,
     component: ForgotPassword,
+  },
+  {
+    index: false,
+    path: `${routerPaths.CREATE_NEW_PASSWORD}`,
+    component: NewPassword,
   },
 ];

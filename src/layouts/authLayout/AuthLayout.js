@@ -13,10 +13,6 @@ const AuthLayout = () => {
       </div>
       <div className='loginBox'>
         <div className={`loginContent`}>
-          <h1 className='loginTitle'>
-            Welcome <br /> to Home Services
-          </h1>
-          <h3 className='loginRole'>Admin</h3>
           <Outlet />
         </div>
       </div>
