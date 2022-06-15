@@ -13,7 +13,7 @@ const ListService = () => {
             key={service.id}
             className='serviceDisplay'
             onClick={() => {
-              navigate(`/services/${service.id}`);
+              navigate(`/admin/services/${service.id}`);
             }}
           >
             <h1>{service.name}</h1> <p>{service.description}</p>{' '}

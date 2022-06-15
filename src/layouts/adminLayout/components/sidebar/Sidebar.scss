@@ -1,0 +1,24 @@
+@import '../../../../components/globalStyles/GlobalStyles.scss';
+
+.sbContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  padding: 1rem;
+}
+
+.sbLogo {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-bottom: $mb-2;
+}
+
+.sbLogoName {
+  font-size: $h3-font-size;
+  font-weight: $font-semi-bold;
+  color: $first-color;
+}

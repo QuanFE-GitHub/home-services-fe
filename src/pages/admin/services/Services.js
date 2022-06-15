@@ -1,15 +1,8 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 const Services = () => {
-  return (
-    <div>
-      <nav>
-        <Link to={`/services/list`}>List</Link>
-      </nav>
-      <Outlet />
-    </div>
-  );
+  return <Outlet />;
 };
 
 export default Services;
