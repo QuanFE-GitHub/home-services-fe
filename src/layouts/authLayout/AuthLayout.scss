@@ -1,4 +1,5 @@
 @import '../../components/globalStyles/GlobalStyles.scss';
+
 .loginContainer {
   margin: 0 auto;
   height: 100vh;
@@ -27,19 +28,6 @@
 
 .loginContent {
   width: 350px;
-}
-
-.loginTitle {
-  font-size: 2rem;
-  color: $title-color;
-  font-weight: $font-bold;
-  margin-bottom: $mb-0-5;
-}
-
-.loginRole {
-  font-size: $small-font-size;
-  color: $text-color-light;
-  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 1024px) {
