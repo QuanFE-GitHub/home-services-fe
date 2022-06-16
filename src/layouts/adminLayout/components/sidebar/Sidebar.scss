@@ -8,17 +8,138 @@
   height: 100%;
   background-color: white;
   padding: 1rem;
+  -webkit-box-shadow: 3px 3px 10px 3px #ddd;
+  -moz-box-shadow: 3px 3px 10px 3px #ddd;
+  box-shadow: 3px 3px 10px 3px #ddd;
 }
 
 .sbLogo {
-  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  text-align: center;
   margin-bottom: $mb-2;
 }
 
 .sbLogoName {
   font-size: $h3-font-size;
-  font-weight: $font-semi-bold;
+  font-weight: $font-bold;
   color: $first-color;
+}
+
+.sbLogoDesc {
+  font-size: $smaller-font-size;
+  color: $text-color-light;
+  text-transform: capitalize;
+}
+
+.sbMenuItemLink {
+  display: block;
+  height: 50px;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.1s ease;
+}
+
+.sbMenuItemLink:hover {
+  background-color: #f8f8f8;
+}
+
+.sbMenuItemLink.active {
+  background-color: $first-color;
+}
+
+.sbMenuItemLink.active .sbMenuLinkItem {
+  color: white;
+}
+
+.sbMenuItemLink.active .sbMenuIcon {
+  fill: white;
+}
+
+.sbMenuItem {
+  display: flex;
+  align-items: center;
+}
+
+.sbMenuIcon {
+  width: 22px;
+  height: 22px;
+  margin-right: 1rem;
+  fill: $text-color;
+  transition: all 0.1s ease;
+}
+
+.sbMenuLinkItem {
+  color: $text-color;
+  font-weight: $font-semi-bold;
+  text-transform: capitalize;
+  transition: all 0.1s ease;
+}
+
+.sbProfileContainer {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.sbProfile,
+.sbProfileWrap {
+  display: flex;
+  align-items: center;
+}
+
+.sbProfile {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sbProfileAvatar {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin-right: 1rem;
+}
+
+.sbProfileStatus {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: $online-color;
+  right: -5px;
+  bottom: -5px;
+  border: 3px solid white;
+}
+
+.sbProfileImg {
+  width: 35px;
+  height: 35px;
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+.sbProfileName {
+  font-size: $small-font-size;
+  color: $title-color;
+  font-weight: $font-semi-bold;
+  text-transform: capitalize;
+}
+
+.sbProfileRole {
+  font-size: $smaller-font-size;
+  color: $text-color-light;
+  text-transform: capitalize;
+}
+
+.sbLogoutIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.sbLogoutIcon:hover {
+  fill: $validation-color;
 }
