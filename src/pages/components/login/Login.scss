@@ -53,10 +53,6 @@
   cursor: pointer;
 }
 
-.loginForgot span:hover {
-  color: $first-color-alt;
-}
-
 .loginBtn input {
   padding: 0.8rem 1rem;
   width: 100%;
@@ -66,10 +62,6 @@
   background-color: $first-color;
   color: white;
   cursor: pointer;
-}
-
-.loginBtn input:hover {
-  background-color: $first-color-alt;
 }
 
 @media screen and (max-width: 1024px) {
