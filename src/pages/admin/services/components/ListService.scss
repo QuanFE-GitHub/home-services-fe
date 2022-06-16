@@ -1,3 +1,26 @@
-.serviceDisplay {
-  cursor: pointer;
+@import '/src/components/globalStyles/GlobalStyles.scss';
+
+.lsStatistic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  column-gap: 28px;
+}
+
+.lsTableReorganize {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  padding: auto;
+  background-color: $body-color;
+
+  border-top-left-radius: $normal-radius;
+  border-top-right-radius: $normal-radius;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.lsSearchWrap {
+  margin-right: 1.25rem;
 }

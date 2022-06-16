@@ -1,25 +1,31 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+
+import Button from 'src/components/button';
+import Search from 'src/components/search';
+import StatCard from 'src/pages/admin/components/statCard';
+import ServiceHeader from '../table/ServiceHeader';
+
 import './ListService.scss';
-import { ServicesData } from '../../../../data/ServicesData';
 
 const ListService = () => {
-  const navigate = useNavigate();
   return (
-    <div>
-      {ServicesData.map((service, idx) => {
-        return (
-          <div
-            key={service.id}
-            className='serviceDisplay'
-            onClick={() => {
-              navigate(`/admin/services/${service.id}`);
-            }}
-          >
-            <h1>{service.name}</h1> <p>{service.description}</p>{' '}
-          </div>
-        );
-      })}
+    <div id='listServices'>
+      <div className='lsStatistic'>
+        <StatCard />
+        <StatCard />
+        <StatCard />
+      </div>
+      <div className='lsTableReorganize'>
+        <div className='lsSearchWrap'>
+          <Search />
+        </div>
+
+        <Button title='Add new service' />
+      </div>
+      <div className='lsTable'>
+        <ServiceHeader />
+      </div>
+      <div className='lsPagination'></div>
     </div>
   );
 };
