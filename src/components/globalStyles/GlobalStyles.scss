@@ -13,7 +13,10 @@ $text-color: hsl(210, 10%, 23%);
 $text-color-light: hsl(208, 7%, 46%);
 $border-color: hsl(210, 11%, 71%);
 $body-color: #fff;
-$validation-color: rgb(230, 57, 70);
+$validation-color: hsl(355, 78%, 56%);
+$online-color: hsl(134, 61%, 41%);
+$warning-color: hsl(45, 100%, 51%);
+$disable-color: hsl(208, 7%, 46%);
 
 // Font Family
 $body-font: 'Poppins', sans-serif;
@@ -49,6 +52,16 @@ $desktop: 1440px;
 $laptop: 1024px;
 $tablet: 768px;
 $mobile: 400px;
+
+@media screen and (max-width: 1024px) {
+  $biggest-font-size: 1.5rem;
+  $h1-font-size: 1.5rem;
+  $h2-font-size: 1.25rem;
+  $h3-font-size: 1rem;
+  $normal-font-size: 0.938rem;
+  $small-font-size: 0.813rem;
+  $smaller-font-size: 0.75rem;
+}
 
 // Base
 * {
