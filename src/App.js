@@ -13,6 +13,9 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path={`/admin/services`} element={<Error />} />
+        <Route path={`/admin/customers`} element={<Error />} />
+        <Route path={`/admin/employees`} element={<Error />} />
         <Route path='*' element={<Error />} />
 
         <Route path='auth' element={<AuthLayout />}>

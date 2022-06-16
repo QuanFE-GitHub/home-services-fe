@@ -1,5 +1,7 @@
 import { exactRouter } from '../routes/routes';
 
+import { BiServer, BiGitPullRequest, BiGroup } from 'react-icons/bi';
+
 export const routerPath = {
   // Role
   ADMIN: `admin`,
@@ -13,17 +15,21 @@ export const menu = [
   {
     path: `/${exactRouter.services}`,
     title: 'services',
+    icon: BiServer,
   },
   {
-    path: `/${exactRouter.services}`,
-    title: 'request',
+    path: `/${exactRouter.request}`,
+    title: 'requests',
+    icon: BiGitPullRequest,
   },
   {
-    path: `/${exactRouter.services}`,
-    title: 'customer',
+    path: `/${exactRouter.customers}`,
+    title: 'customers',
+    icon: BiGroup,
   },
   {
-    path: `/${exactRouter.services}`,
-    title: 'employee',
+    path: `/${exactRouter.employees}`,
+    title: 'employees',
+    icon: BiGroup,
   },
 ];
