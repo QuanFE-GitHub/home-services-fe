@@ -1,0 +1,53 @@
+@import '/src/components/globalStyles/GlobalStyles.scss';
+
+#statCard {
+  background-color: $body-color;
+  box-shadow: $normal-shadow;
+  padding: 1.5rem;
+  border-radius: $normal-radius;
+  height: 100px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scStatValue {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scValue {
+  font-size: $h3-font-size;
+  font-weight: $font-bold;
+  color: $title-color;
+}
+
+.scLabel {
+  font-size: $small-font-size;
+  color: $text-color-light;
+}
+
+.scIconWrap {
+  height: 46px;
+  width: 46px;
+
+  padding: 0.5rem;
+  border-radius: 50%;
+
+  color: #7367f0 !important;
+  background: rgba(115, 103, 240, 0.12) !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scIcon {
+  width: 20px;
+  height: 20px;
+}

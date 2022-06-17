@@ -1,0 +1,55 @@
+@import '/src/components/globalStyles/GlobalStyles.scss';
+
+#searchComponent {
+  display: flex;
+  align-items: center;
+}
+
+#searchComponent:focus-within .scBtnSearch {
+  background-color: $second-color;
+  box-shadow: 0 8px 25px -8px #7367f0;
+}
+
+#searchComponent:focus-within .scSearchIcon {
+  filter: brightness(0) invert(1);
+}
+
+#searchComponent:focus-within .scInputSearch {
+  border: 1px solid $second-color;
+}
+
+.scBtnSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f3f4f6;
+  border: 1px solid transparent;
+  height: 40px;
+  width: 34px;
+
+  border-top-left-radius: $normal-radius;
+  border-bottom-left-radius: $normal-radius;
+}
+
+.scSearchIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.scInputSearch {
+  height: 40px;
+  width: 220px;
+  padding: 0 0.5rem;
+
+  border: none;
+  outline: none;
+  background-color: #f3f4f6;
+  caret-color: $second-color;
+  border-top-right-radius: $normal-radius;
+  border-bottom-right-radius: $normal-radius;
+
+  font-size: $small-font-size;
+  color: $second-color;
+  font-weight: $font-semi-bold;
+}
