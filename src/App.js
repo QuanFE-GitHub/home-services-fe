@@ -4,7 +4,6 @@ import { adminRoutes, authRoutes } from './routes/routes';
 
 import AuthLayout from './layouts/authLayout';
 import AdminLayout from './layouts/adminLayout';
-import Customer from './pages/admin/customer';
 import Home from './pages/user/home/Home';
 import Error from './pages/error';
 
@@ -41,7 +40,6 @@ function App() {
             );
           })}
         </Route>
-        <Route path='users' element={<Customer />} />
       </Routes>
     </Router>
   );

@@ -33,3 +33,5 @@ export const menu = [
     icon: BiGroup,
   },
 ];
+
+export const customerTableHeader = ['customer', 'email', 'phone', 'age', 'action'];
