@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { ServicesData } from '../../../../data/ServicesData';
+
 import './ServicesDetail.scss';
 
 const ServicesDetail = () => {

@@ -3,7 +3,7 @@ import React from 'react';
 import Button from 'src/components/button';
 import Search from 'src/components/search';
 import StatCard from 'src/pages/admin/components/statCard';
-import ServiceHeader from '../table/ServiceHeader';
+import ServiceHeader from '../components/table/ServiceHeader';
 
 import './ListService.scss';
 

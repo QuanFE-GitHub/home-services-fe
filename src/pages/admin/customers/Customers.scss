@@ -1,0 +1,44 @@
+@import 'src/components/globalStyles/GlobalStyles.scss';
+
+.customerHeader,
+.customerBreadCrumbs,
+.customerBreadCrumbsItem {
+  display: flex;
+  align-items: center;
+}
+
+.customerHeader {
+  margin-bottom: 1.5rem;
+}
+
+.customerTitle {
+  position: relative;
+  display: inline-block;
+  font-size: 1.25rem;
+  color: $text-color;
+  margin-right: 2rem;
+}
+
+.customerTitle::after {
+  content: '';
+  position: absolute;
+  right: -16px;
+  width: 1px;
+  height: 100%;
+  background-color: $border-color;
+}
+
+.customerBeadCrumbsAdmin {
+  margin-right: 0.5rem;
+  color: $first-color;
+}
+
+.customerBeadCrumbsIcon {
+  font-size: 0.8rem;
+  color: $text-color-light;
+  margin-right: 0.5rem;
+}
+
+.customerBeadCrumbsName {
+  color: $text-color-light;
+}
