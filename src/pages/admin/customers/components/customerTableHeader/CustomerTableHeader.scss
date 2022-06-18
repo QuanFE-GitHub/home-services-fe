@@ -1,0 +1,13 @@
+@import 'src/components/globalStyles/GlobalStyles.scss';
+
+.customerTableHeader {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 3fr) repeat(2, 2fr) 1fr;
+}
+
+.cthTitle {
+  text-transform: uppercase;
+  font-weight: $font-semi-bold;
+  color: $text-color;
+}

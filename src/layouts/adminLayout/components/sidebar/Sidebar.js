@@ -22,8 +22,8 @@ const Sidebar = () => {
         <ul className='sbMenuList'>
           {menu.map((item, index) => {
             return (
-              <NavLink to={item.path} className='sbMenuItemLink'>
-                <li className='sbMenuItem' key={index}>
+              <NavLink to={item.path} className='sbMenuItemLink' key={index}>
+                <li className='sbMenuItem'>
                   {<item.icon className='sbMenuIcon' />}
                   <span className='sbMenuLinkItem'>{item.title}</span>
                 </li>
