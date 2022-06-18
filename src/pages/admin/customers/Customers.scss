@@ -36,9 +36,15 @@
 .customerBeadCrumbsIcon {
   font-size: 0.8rem;
   color: $text-color-light;
-  margin-right: 0.5rem;
 }
 
 .customerBeadCrumbsName {
   color: $text-color-light;
+}
+
+.clTable {
+  box-shadow: $normal-shadow;
+  border-radius: $normal-radius;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
 }
