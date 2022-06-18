@@ -1,6 +1,7 @@
 import React from 'react';
 import TableHeaderAction from 'src/components/tableHeaderActions';
 import StatCard from '../../components/statCard';
+// import CustomerTableHeader from '../components/customerTableHeader';
 
 import './CustomerList.scss';
 
@@ -16,6 +17,7 @@ const CustomerList = () => {
       </div>
       <div className='clTable'>
         <TableHeaderAction />
+        {/* <CustomerTableHeader /> */}
         <div className='clTableListItem'></div>
       </div>
     </div>
