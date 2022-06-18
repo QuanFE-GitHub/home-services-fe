@@ -12,9 +12,9 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path={`/admin/services`} element={<Error />} />
+        {/* <Route path={`/admin/services`} element={<Error />} />
         <Route path={`/admin/customers`} element={<Error />} />
-        <Route path={`/admin/employees`} element={<Error />} />
+        <Route path={`/admin/employees`} element={<Error />} /> */}
         <Route path='*' element={<Error />} />
 
         <Route path='auth' element={<AuthLayout />}>
@@ -26,14 +26,19 @@ function App() {
 
         <Route path='admin' element={<AdminLayout />}>
           {adminRoutes.map((route, index) => {
-            const Page = route.component;
+            const Page = route.component || '';
             return (
               <Route key={index} path={route.path} element={<Page />}>
                 {route.children &&
                   route.children.map((routeChild, index) => {
                     const ChildrenPage = routeChild.component;
                     return (
-                      <Route key={index} index={routeChild.index} path={routeChild.path} element={<ChildrenPage />} />
+                      <Route
+                        key={index}
+                        index={routeChild.index ?? false}
+                        path={routeChild.path}
+                        element={<ChildrenPage />}
+                      />
                     );
                   })}
               </Route>
