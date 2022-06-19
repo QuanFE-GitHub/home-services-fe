@@ -9,7 +9,7 @@ import RequestList from 'src/pages/admin/requests/requestList';
 import Customers from 'src/pages/admin/customers';
 
 import Employees from 'src/pages/admin/employees';
-import EmployeeList from 'src/pages/admin/employees/employeeList';
+// import EmployeeList from 'src/pages/admin/employees/employeeList';
 
 import ServiceList from 'src/pages/admin/services/serviceList';
 import ServiceDetails from 'src/pages/admin/services/serviceDetails';
@@ -57,10 +57,9 @@ export const exactRouter = {
   editCustomers: `${routerPaths.ADMIN}/${routerPaths.CUSTOMERS}/:${routerPaths.ID}`,
 
   // Employees
-  employees: `${routerPaths.ADMIN}/${routerPaths.EMPLOYEES}/${routerPaths.LIST}`,
-  listEmployees: `${routerPaths.ADMIN}/${routerPaths.EMPLOYEES}/${routerPaths.LIST}`,
+  employees: `${routerPaths.ADMIN}/${routerPaths.EMPLOYEES}`,
   createEmployees: `${routerPaths.ADMIN}/${routerPaths.EMPLOYEES}/${routerPaths.CREATE}`,
-  editEmployees: `${routerPaths.ADMIN}/${routerPaths.EMPLOYEES}`,
+  editEmployees: `${routerPaths.ADMIN}/${routerPaths.EMPLOYEES}/:${routerPaths.ID}`,
 };
 
 export const authRoutes = [
@@ -121,12 +120,12 @@ export const adminRoutes = [
   {
     path: `${routerPaths.EMPLOYEES}`,
     component: Employees,
-    children: [
-      {
-        path: `${routerPaths.LIST}`,
-        component: EmployeeList,
-        index: true,
-      },
-    ],
+    // children: [
+    //   {
+    //     path: `${routerPaths.LIST}`,
+    //     component: EmployeeList,
+    //     index: true,
+    //   },
+    // ],
   },
 ];

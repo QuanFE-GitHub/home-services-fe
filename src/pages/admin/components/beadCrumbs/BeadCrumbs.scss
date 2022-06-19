@@ -39,10 +39,5 @@
 .beadCrumbsName {
   color: var(--text-color-light);
   margin-left: 0.5rem;
-}
-
-.clTable {
-  box-shadow: var(--normal-shadow);
-  border-radius: var(--normal-radius);
-  overflow: hidden;
+  text-transform: capitalize;
 }

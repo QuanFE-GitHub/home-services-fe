@@ -1,10 +1,8 @@
-@import '/src/components/globalStyles/GlobalStyles.scss';
-
 #statCard {
-  background-color: $body-color;
-  box-shadow: $normal-shadow;
+  background-color: var(--body-color);
+  box-shadow: var(--normal-shadow);
   padding: 1.5rem;
-  border-radius: $normal-radius;
+  border-radius: var(--normal-radius);
   height: 100px;
   width: 100%;
 
@@ -22,14 +20,14 @@
 }
 
 .scValue {
-  font-size: $h3-font-size;
-  font-weight: $font-bold;
-  color: $title-color;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  color: var(--title-color);
 }
 
 .scLabel {
-  font-size: $small-font-size;
-  color: $text-color-light;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
 }
 
 .scIconWrap {
@@ -39,8 +37,8 @@
   padding: 0.5rem;
   border-radius: 50%;
 
-  color: #7367f0 !important;
-  background: rgba(115, 103, 240, 0.12) !important;
+  color: var(--first-color);
+  background: var(--first-color-light);
 
   display: flex;
   align-items: center;
