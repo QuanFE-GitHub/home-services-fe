@@ -22,7 +22,6 @@ const statData = [
   },
 ];
 
-// const filterOptions = ['nam', 'nữ'];
 const filterOptions = {
   filterValue: 'Chọn giới tính',
   options: ['nam', 'nữ'],

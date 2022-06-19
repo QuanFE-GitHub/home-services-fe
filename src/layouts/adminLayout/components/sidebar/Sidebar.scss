@@ -52,7 +52,7 @@
 }
 
 .sbMenuItemLink.active .sbMenuIcon {
-  fill: white;
+  color: white;
 }
 
 .sbMenuItem {
@@ -64,7 +64,7 @@
   width: 22px;
   height: 22px;
   margin-right: 1rem;
-  fill: var(--text-color);
+  color: var(--text-color);
   transition: all 0.1s ease;
 }
 
