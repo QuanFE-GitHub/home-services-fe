@@ -1,7 +1,7 @@
 import React from 'react';
 import './CustomerTableHeader.scss';
 
-const customerTableHeader = ['name', 'email', 'phone', 'age', 'actions'];
+const customerTableHeader = ['Khách hàng', 'email', 'di động', 'tuổi', '...'];
 
 const CustomerTableHeader = () => {
   return (

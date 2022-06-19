@@ -30,12 +30,12 @@ const statData = [
   },
 ];
 
-const beadCrumbs = ['customer'];
+const beadCrumbs = ['customers'];
 
 const Customers = () => {
   return (
     <div id='customers' className='customers'>
-      <BeadCrumbs title='Customer' beadCrumbs={beadCrumbs} />
+      <BeadCrumbs title='Customers' beadCrumbs={beadCrumbs} />
 
       <div id='customerList' className='customerList'>
         <div className='lsStatistic'>
