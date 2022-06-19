@@ -23,6 +23,14 @@ const actions = [
 const ServiceTableItem = ({ item }) => {
   const [showActions, setShowActions] = useState(null);
 
+  const toggle = (id) => {
+    if (showActions === id) {
+      return setShowActions(null);
+    }
+
+    setShowActions(id);
+  };
+
   return (
     <div className='serviceTableItem'>
       <div className='ctiName'>
@@ -39,9 +47,9 @@ const ServiceTableItem = ({ item }) => {
       <div className='ctiStatus'>
         <span className='ctiStatusActive'>{`chưa kích hoạt`}</span>
       </div>
-      <div className='ctiActions'>
+      <div className='ctiActions' onClick={() => toggle(item.id)}>
         <FaEllipsisV className='ctiActionIcon' />
-        {showActions && (
+        {showActions === item.id ? (
           <ul className='ctiActionList'>
             {actions.map((action, idx) => {
               return (
@@ -52,7 +60,7 @@ const ServiceTableItem = ({ item }) => {
               );
             })}
           </ul>
-        )}
+        ) : null}
       </div>
     </div>
   );

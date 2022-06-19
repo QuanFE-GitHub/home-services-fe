@@ -5,7 +5,7 @@ import { FaTimes, FaChevronDown } from 'react-icons/fa';
 import './Filter.scss';
 
 const Filter = ({ filterOptions }) => {
-  const [value, setValue] = useState('');
+  const [selectValue, setSelectValue] = useState('');
   const [isActive, setIsActive] = useState(false);
 
   const filterClick = () => {
@@ -13,12 +13,12 @@ const Filter = ({ filterOptions }) => {
   };
 
   const handleSelected = (e) => {
-    setValue(e.target.innerText);
+    setSelectValue(e.target.innerText);
     setIsActive(!isActive);
   };
 
   const handleClearSelected = () => {
-    setValue('');
+    setSelectValue('');
   };
 
   return (
@@ -26,19 +26,25 @@ const Filter = ({ filterOptions }) => {
       <div className='filterSelect'>
         <input
           type='text'
-          defaultValue={value}
+          value={selectValue}
           className='filterSelected'
           placeholder={`${filterOptions.filterValue}...`}
           onClick={filterClick}
+          onChange={(e) => setSelectValue(e.target.value)}
         />
         <div className='filterIcon'>
-          {value && (
+          {selectValue && (
             <div className='filterClose' onClick={handleClearSelected}>
               <FaTimes />
             </div>
           )}
-          {!value && (
+          {!selectValue && (
             <div className='filterDown' onClick={filterClick}>
+              <FaChevronDown className='filterIconDown' />
+            </div>
+          )}
+          {!selectValue && (
+            <div className='filterDown'>
               <FaChevronDown className='filterIconDown' />
             </div>
           )}

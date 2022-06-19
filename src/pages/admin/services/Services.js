@@ -2,6 +2,7 @@ import React from 'react';
 
 import { FaLayerGroup } from 'react-icons/fa';
 import TableHeaderActions from 'src/components/tableHeaderActions';
+import { serviceList } from 'src/data/ServicesData';
 
 import BeadCrumbs from '../components/beadCrumbs';
 import Pagination from '../components/pagination';
@@ -55,11 +56,9 @@ const Services = () => {
           <ServiceTableHeader />
 
           <div className='clTableListItem'>
-            {Array(10)
-              .fill(0)
-              .map((item, index) => {
-                return <ServiceTableItem item={item} key={index} />;
-              })}
+            {serviceList.map((item, index) => {
+              return <ServiceTableItem item={item} key={item.id} />;
+            })}
           </div>
 
           <Pagination />

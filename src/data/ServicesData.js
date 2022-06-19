@@ -21,3 +21,66 @@ export const ServicesData = [
     image: 'https://via.placeholder.com/150',
   },
 ];
+
+export const serviceList = [
+  {
+    id: 1,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+  {
+    id: 2,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+  {
+    id: 3,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+  {
+    id: 4,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+  {
+    id: 5,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+  {
+    id: 6,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+  {
+    id: 7,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+  {
+    id: 8,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+  {
+    id: 9,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+  {
+    id: 10,
+    name: 'Dọn dẹp phòng ngủ',
+    price: '500.000',
+    status: 'chưa kích hoạt',
+  },
+];
