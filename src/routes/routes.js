@@ -4,15 +4,10 @@ import NewPassword from 'src/pages/auth/newPassword/index';
 import Services from '../pages/admin/services';
 
 import Requests from 'src/pages/admin/requests';
-import RequestList from 'src/pages/admin/requests/requestList';
 
 import Customers from 'src/pages/admin/customers';
 
 import Employees from 'src/pages/admin/employees';
-// import EmployeeList from 'src/pages/admin/employees/employeeList';
-
-import ServiceList from 'src/pages/admin/services/serviceList';
-import ServiceDetails from 'src/pages/admin/services/serviceDetails';
 
 export const routerPaths = {
   ADMIN: 'admin',
@@ -42,14 +37,12 @@ export const exactRouter = {
   forgotPassword: `${routerPaths.AUTH}/${routerPaths.FORGOT_PASSWORD}`,
 
   // Services
-  services: `${routerPaths.ADMIN}/${routerPaths.SERVICES}/${routerPaths.LIST}`,
-  listService: `${routerPaths.ADMIN}/${routerPaths.SERVICES}/${routerPaths.LIST}`,
+  services: `${routerPaths.ADMIN}/${routerPaths.SERVICES}`,
   createService: `${routerPaths.ADMIN}/${routerPaths.SERVICES}/${routerPaths.CREATE}`,
   editService: `${routerPaths.ADMIN}/${routerPaths.SERVICES}`,
 
   // Request
-  request: `${routerPaths.ADMIN}/${routerPaths.REQUESTS}/${routerPaths.LIST}`,
-  listRequests: `${routerPaths.ADMIN}/${routerPaths.REQUESTS}/${routerPaths.LIST}`,
+  request: `${routerPaths.ADMIN}/${routerPaths.REQUESTS}`,
 
   // Customers
   customers: `${routerPaths.ADMIN}/${routerPaths.CUSTOMERS}`,
@@ -84,28 +77,10 @@ export const adminRoutes = [
   {
     path: `${routerPaths.SERVICES}`,
     component: Services,
-    children: [
-      {
-        path: `${routerPaths.LIST}`,
-        component: ServiceList,
-        index: true,
-      },
-      {
-        path: `:${routerPaths.ID}`,
-        component: ServiceDetails,
-      },
-    ],
   },
   {
     path: `${routerPaths.REQUESTS}`,
     component: Requests,
-    children: [
-      {
-        path: `${routerPaths.LIST}`,
-        component: RequestList,
-        index: true,
-      },
-    ],
   },
   {
     path: `${routerPaths.CUSTOMERS}`,
@@ -120,12 +95,5 @@ export const adminRoutes = [
   {
     path: `${routerPaths.EMPLOYEES}`,
     component: Employees,
-    // children: [
-    //   {
-    //     path: `${routerPaths.LIST}`,
-    //     component: EmployeeList,
-    //     index: true,
-    //   },
-    // ],
   },
 ];

@@ -28,6 +28,9 @@
 .scLabel {
   font-size: var(--small-font-size);
   color: var(--text-color-light);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .scIconWrap {
