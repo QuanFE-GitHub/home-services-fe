@@ -14,6 +14,7 @@ const Filter = ({ filterOptions }) => {
 
   const handleSelected = (e) => {
     setValue(e.target.innerText);
+    setIsActive(!isActive);
   };
 
   const handleClearSelected = () => {
@@ -22,17 +23,25 @@ const Filter = ({ filterOptions }) => {
 
   return (
     <div className='filter'>
-      <div className='filterSelect' onClick={filterClick}>
-        <input type='text' value={value} className='filterSelected' placeholder={`${filterOptions.filterValue}...`} />
+      <div className='filterSelect'>
+        <input
+          type='text'
+          defaultValue={value}
+          className='filterSelected'
+          placeholder={`${filterOptions.filterValue}...`}
+          onClick={filterClick}
+        />
         <div className='filterIcon'>
           {value && (
             <div className='filterClose' onClick={handleClearSelected}>
               <FaTimes />
             </div>
           )}
-          <div className='filterDown'>
-            <FaChevronDown className='filterIconDown' />
-          </div>
+          {!value && (
+            <div className='filterDown' onClick={filterClick}>
+              <FaChevronDown className='filterIconDown' />
+            </div>
+          )}
         </div>
       </div>
       {isActive && (

@@ -14,22 +14,22 @@ export const routerPath = {
 export const menu = [
   {
     path: `/${exactRouter.services}`,
-    title: 'services',
+    title: 'dịch vụ',
     icon: BiServer,
   },
   {
     path: `/${exactRouter.request}`,
-    title: 'requests',
+    title: 'yêu cầu dịch vụ',
     icon: BiGitPullRequest,
   },
   {
     path: `/${exactRouter.customers}`,
-    title: 'customers',
+    title: 'khách hàng',
     icon: BiGroup,
   },
   {
     path: `/${exactRouter.employees}`,
-    title: 'employees',
+    title: 'nhân viên',
     icon: BiGroup,
   },
 ];

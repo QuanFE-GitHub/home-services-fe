@@ -20,12 +20,8 @@ const actions = [
   },
 ];
 
-const ServiceTableItem = () => {
-  const [showActions, setShowActions] = useState(false);
-
-  const handleActionsClick = () => {
-    setShowActions(!showActions);
-  };
+const ServiceTableItem = ({ item }) => {
+  const [showActions, setShowActions] = useState(null);
 
   return (
     <div className='serviceTableItem'>
@@ -43,7 +39,7 @@ const ServiceTableItem = () => {
       <div className='ctiStatus'>
         <span className='ctiStatusActive'>{`chưa kích hoạt`}</span>
       </div>
-      <div className='ctiActions' onClick={handleActionsClick}>
+      <div className='ctiActions'>
         <FaEllipsisV className='ctiActionIcon' />
         {showActions && (
           <ul className='ctiActionList'>

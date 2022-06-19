@@ -41,7 +41,7 @@ const Employees = () => {
         </div>
 
         <div className='clTable'>
-          <TableHeaderActions add='add new employee' filterOptions={filterOptions} />
+          <TableHeaderActions add='thêm nhân viên mới' filterOptions={filterOptions} />
 
           <EmployeeTableHeader />
 

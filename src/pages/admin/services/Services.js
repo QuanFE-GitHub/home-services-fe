@@ -50,7 +50,7 @@ const Services = () => {
         </div>
 
         <div className='clTable'>
-          <TableHeaderActions add='add new service' filterOptions={filterOptions} />
+          <TableHeaderActions add='thêm dịch vụ mới' filterOptions={filterOptions} />
 
           <ServiceTableHeader />
 
