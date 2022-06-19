@@ -77,6 +77,7 @@ export const adminRoutes = [
   {
     path: `${routerPaths.SERVICES}`,
     component: Services,
+    index: true,
   },
   {
     path: `${routerPaths.REQUESTS}`,

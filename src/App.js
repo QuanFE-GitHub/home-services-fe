@@ -25,7 +25,7 @@ function App() {
           {adminRoutes.map((route, index) => {
             const Page = route.component || '';
             return (
-              <Route key={index} path={route.path} element={<Page />}>
+              <Route key={index} path={route.path} index={route.index ?? false} element={<Page />}>
                 {route.children &&
                   route.children.map((routeChild, index) => {
                     const ChildrenPage = routeChild.component;
