@@ -1,8 +1,6 @@
 .adContainer {
   display: flex;
   background-color: #f8f8f8;
-  width: 100vw;
-  height: 100vh;
 }
 
 .adMain {
@@ -10,4 +8,5 @@
   left: 250px;
   width: calc(100% - 250px);
   padding: 1rem 2rem;
+  overflow-y: hidden;
 }
