@@ -1,0 +1,57 @@
+.serviceSideBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  bottom: 0;
+  width: 350px;
+  background-color: white;
+  // box-shadow: 3px 3px 10px 3px #ddd;
+  z-index: var(--z-fixed);
+  transition: all 0.3s ease;
+}
+
+.showSideBar {
+  transform: translateX(0);
+}
+
+.ssbHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  padding: 1rem;
+}
+
+.ssbClose {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ssbClose:hover .ssbCloseIcon {
+  color: var(--first-color);
+}
+
+.ssbCloseIcon {
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.ssbTitle {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  text-transform: capitalize;
+  color: var(--text-color);
+}
+
+.ssbContent {
+  padding: 1rem;
+}

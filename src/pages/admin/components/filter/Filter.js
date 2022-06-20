@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { FaTimes, FaChevronDown } from 'react-icons/fa';
+
+import helpFunction from 'src/utils/help';
 
 import './Filter.scss';
 
 const Filter = ({ filterOptions }) => {
   const [selectValue, setSelectValue] = useState('');
   const [isActive, setIsActive] = useState(false);
+  const filterBox = useRef();
 
   const filterClick = () => {
     setIsActive(!isActive);
@@ -21,8 +24,10 @@ const Filter = ({ filterOptions }) => {
     setSelectValue('');
   };
 
+  helpFunction.useOutside(filterBox, setIsActive);
+
   return (
-    <div className='filter'>
+    <div className='filter' ref={filterBox}>
       <div className='filterSelect'>
         <input
           type='text'
