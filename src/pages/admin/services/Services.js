@@ -1,12 +1,15 @@
 import React from 'react';
+import { useState } from 'react';
 
 import { FaLayerGroup } from 'react-icons/fa';
+import Overlay from 'src/components/overlay';
 import TableHeaderActions from 'src/components/tableHeaderActions';
 import { serviceList } from 'src/data/ServicesData';
 
 import BeadCrumbs from '../components/beadCrumbs';
 import Pagination from '../components/pagination';
 import StatCard from '../components/statCard';
+import ServiceSideBar from './components/serviceSideBar';
 import ServiceTableHeader from './components/serviceTableHeader';
 import ServiceTableItem from './components/serviceTableItem';
 
@@ -39,9 +42,14 @@ const filterOptions = {
 };
 
 const Services = () => {
+  const [sidebar, setSideBar] = useState(false);
+
   return (
     <div id='services' className='services'>
       <BeadCrumbs title='Services' beadCrumbs={beadCrumbs} />
+
+      <ServiceSideBar sidebar={sidebar} setSideBar={setSideBar} />
+      {sidebar && <Overlay />}
 
       <div id='customerList' className='customerList'>
         <div className='lsStatistic'>
@@ -51,7 +59,7 @@ const Services = () => {
         </div>
 
         <div className='clTable'>
-          <TableHeaderActions add='thêm dịch vụ mới' filterOptions={filterOptions} />
+          <TableHeaderActions add='thêm dịch vụ mới' filterOptions={filterOptions} setSideBar={setSideBar} />
 
           <ServiceTableHeader />
 

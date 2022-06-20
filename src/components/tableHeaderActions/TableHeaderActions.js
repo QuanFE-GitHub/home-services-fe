@@ -5,7 +5,10 @@ import Search from '../search';
 
 import './TableHeaderActions.scss';
 
-const TableHeaderActions = ({ add, filterOptions }) => {
+const TableHeaderActions = ({ add, filterOptions, setSideBar }) => {
+  const handleAdd = () => {
+    setSideBar(true);
+  };
   return (
     <div className='tableHeaderActions'>
       <div className='thaLeft'>
@@ -13,7 +16,11 @@ const TableHeaderActions = ({ add, filterOptions }) => {
       </div>
       <div className='thaRight'>
         <Search />
-        {add && <div className='thaAdd'>{add}</div>}
+        {add && (
+          <div className='thaAdd' onClick={handleAdd}>
+            {add}
+          </div>
+        )}
       </div>
     </div>
   );
