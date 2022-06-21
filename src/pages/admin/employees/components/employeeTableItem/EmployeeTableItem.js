@@ -19,7 +19,7 @@ const EmployeeTableItem = () => {
       </div>
       <span className='ctiLabel'>quandev.fr@gmail.com</span>
       <span className='ctiLabel'>985-313-666</span>
-      <span className='ctiLabel'>25</span>
+      <span className='ctiLabel'>23</span>
       <div className='ctiActions'>
         <FaEllipsisV className='ctiActionIcon' />
       </div>
