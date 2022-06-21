@@ -13,6 +13,7 @@ const RequestTableItem = () => {
       <div className='ctiLabel'>
         <span className='ctiLabelStatusRequest'>đã hoàn thành</span>
       </div>
+      <span className='ctiLabel'>...</span>
       <div className='ctiActions'>
         <FaEllipsisV className='ctiActionIcon' />
       </div>

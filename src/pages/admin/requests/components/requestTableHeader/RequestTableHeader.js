@@ -1,7 +1,7 @@
 import React from 'react';
 import './RequestTableHeader.scss';
 
-const requestTableHeader = ['id', 'khách hàng', 'di động', 'trạng thái', '...'];
+const requestTableHeader = ['id', 'khách hàng', 'di động', 'trạng thái', 'nhân viên', '...'];
 
 const RequestTableHeader = () => {
   return (
