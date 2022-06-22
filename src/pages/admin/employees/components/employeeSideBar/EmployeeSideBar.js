@@ -62,7 +62,11 @@ const EmployeeSideBar = ({ sidebar, setSideBar }) => {
           <div className='sbUpload'>
             {picture ? (
               <>
-                <img src={picture.preview} alt='avatar' className='sbAvatarBackground' />
+                <img
+                  src='https://images.unsplash.com/photo-1512950050685-b1d4ae63d2df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80'
+                  alt='avatar'
+                  className='sbAvatarBackground'
+                />
                 <div className='overlayImage'></div>
                 <img src={picture.preview} alt='avatar' className='sbAvatar' />
               </>
