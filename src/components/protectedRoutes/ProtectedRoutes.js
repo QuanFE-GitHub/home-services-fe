@@ -1,9 +1,13 @@
-import { useNavigate } from 'react-router-dom';
-import { exactRouter } from 'src/routes/routes';
+import { Navigate, Outlet } from 'react-router-dom';
 
-const ProtectedRoutes = ({ component }) => {
-  const navigate = useNavigate();
-  return navigate(`${exactRouter.auth}`);
+const useAuth = () => {
+  const user = { loggedIn: false };
+  return user && user.loggedIn;
+};
+
+const ProtectedRoutes = () => {
+  const isAuth = useAuth();
+  return isAuth ? <Outlet /> : <Navigate to='/' />;
 };
 
 export default ProtectedRoutes;

@@ -6,7 +6,7 @@ import AuthLayout from './layouts/authLayout';
 import AdminLayout from './layouts/adminLayout';
 import Home from './pages/user/home/Home';
 import Error from './pages/error';
-// import ProtectedRoutes from './components/protectedRoutes';
+import ProtectedRoutes from './components/protectedRoutes';
 
 function App() {
   return (
@@ -22,27 +22,28 @@ function App() {
           })}
         </Route>
 
-        <Route path='admin' element={<AdminLayout />}>
-          {/* <Route path='admin' element={<ProtectedRoutes component={AdminLayout} />}> */}
-          {adminRoutes.map((route, index) => {
-            const Page = route.component || '';
-            return (
-              <Route key={index} path={route.path} index={route.index ?? false} element={<Page />}>
-                {route.children &&
-                  route.children.map((routeChild, index) => {
-                    const ChildrenPage = routeChild.component;
-                    return (
-                      <Route
-                        key={index}
-                        index={routeChild.index ?? false}
-                        path={routeChild.path}
-                        element={<ChildrenPage />}
-                      />
-                    );
-                  })}
-              </Route>
-            );
-          })}
+        <Route element={<ProtectedRoutes />}>
+          <Route path='admin' element={<AdminLayout />}>
+            {adminRoutes.map((route, index) => {
+              const Page = route.component || '';
+              return (
+                <Route key={index} path={route.path} index={route.index ?? false} element={<Page />}>
+                  {route.children &&
+                    route.children.map((routeChild, index) => {
+                      const ChildrenPage = routeChild.component;
+                      return (
+                        <Route
+                          key={index}
+                          index={routeChild.index ?? false}
+                          path={routeChild.path}
+                          element={<ChildrenPage />}
+                        />
+                      );
+                    })}
+                </Route>
+              );
+            })}
+          </Route>
         </Route>
       </Routes>
     </Router>
