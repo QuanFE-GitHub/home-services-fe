@@ -6,7 +6,7 @@ import AuthLayout from './layouts/authLayout';
 import AdminLayout from './layouts/adminLayout';
 import Home from './pages/user/home/Home';
 import Error from './pages/error';
-import ProtectedRoutes from './components/protectedRoutes';
+// import ProtectedRoutes from './components/protectedRoutes';
 
 function App() {
   return (
@@ -22,8 +22,8 @@ function App() {
           })}
         </Route>
 
-        {/* <Route path='admin' element={<AdminLayout />}> */}
-        <Route path='admin' element={<ProtectedRoutes component={AdminLayout} />}>
+        <Route path='admin' element={<AdminLayout />}>
+          {/* <Route path='admin' element={<ProtectedRoutes component={AdminLayout} />}> */}
           {adminRoutes.map((route, index) => {
             const Page = route.component || '';
             return (

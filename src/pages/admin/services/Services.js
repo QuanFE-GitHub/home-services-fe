@@ -1,7 +1,9 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 
 import { FaLayerGroup } from 'react-icons/fa';
+import servicesApi from 'src/apis/admin/servicesApi';
 import Overlay from 'src/components/overlay';
 import TableHeaderActions from 'src/components/tableHeaderActions';
 import { serviceList } from 'src/data/ServicesData';
@@ -43,6 +45,10 @@ const filterOptions = {
 
 const Services = () => {
   const [sidebar, setSideBar] = useState(false);
+
+  useEffect(() => {
+    servicesApi.getAll().then((response) => console.log(response));
+  });
 
   return (
     <div id='services' className='services'>
