@@ -47,6 +47,7 @@ const EmployeeSideBar = ({ sidebar, setSideBar }) => {
 
   const handleCloseForm = () => {
     setSideBar(false);
+    handleResetForm();
   };
 
   return (
