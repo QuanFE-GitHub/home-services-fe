@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -7,6 +8,8 @@ import './Pagination.scss';
 const paginationNum = [1, 2, 3, 4, 5];
 
 const Pagination = () => {
+  const [pageNum, setPageNum] = useState(false);
+
   return (
     <div id='pagination' className='pagination'>
       <div className='paginationContainer'>
@@ -15,7 +18,7 @@ const Pagination = () => {
         </div>
         {paginationNum.map((item, idx) => {
           return (
-            <span className='paginationNum' key={idx}>
+            <span className={`paginationNum ${pageNum && 'paginationActive'}`} key={idx}>
               {item}
             </span>
           );

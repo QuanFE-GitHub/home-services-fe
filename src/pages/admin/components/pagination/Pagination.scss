@@ -43,8 +43,8 @@
 }
 
 // Pagination Active
-.paginationNum:nth-child(4) {
+.paginationActive {
   border-radius: 32px;
-  color: white;
+  color: white !important;
   background-color: var(--first-color);
 }
