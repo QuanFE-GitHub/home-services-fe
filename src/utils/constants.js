@@ -9,6 +9,11 @@ export const authURL = {
   createNewPassword: 'create-new-password',
 };
 
+export const checkRole = {
+  ADMIN: 'ADMIN',
+  CUSTOMER: 'CUSTOMER',
+};
+
 // LocalStorageAuth
 export const localStorageAuth = {
   ACCESS_TOKEN: 'access_token',

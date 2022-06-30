@@ -3,14 +3,12 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
+import { exactRouter } from 'src/routes/routes';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import { authActions, selectAuthStatus } from 'src/features/auth/authSlice';
-// import { authActions } from 'src/features/auth/authSlice';
+import { authActions, selectAuthStatus } from 'src/features/auth/authSlice';
 
 import { regexEmail, regexPassword } from 'src/utils/constants';
-import { exactRouter } from 'src/routes/routes';
-import { Accounts } from 'src/data/AccountData';
 
 import './Login.scss';
 
@@ -25,8 +23,8 @@ const schema = yup.object().shape({
 const Login = () => {
   console.log(`[Login] render`);
 
-  // const dispatch = useDispatch();
-  // const isStatus = useSelector(selectAuthStatus);
+  const dispatch = useDispatch();
+  const isStatus = useSelector(selectAuthStatus);
   const navigate = useNavigate();
 
   const {
@@ -38,17 +36,10 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    Accounts.map((account, idx) => {
-      if (account.email === data.email && account.password === data.password) {
-        navigate('/admin/services');
-      } else {
-        return alert('Tai khoan hoac mat khau khong dung.');
-      }
-      return console.log(data);
-    });
-    // if (isStatus === null) {
-    //   dispatch(authActions.log(data));
-    // }
+    if (isStatus === null) {
+      dispatch(authActions.login(data));
+      dispatch(navigate);
+    }
   };
 
   return (

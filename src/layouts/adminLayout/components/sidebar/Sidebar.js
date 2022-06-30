@@ -1,17 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { authActions, selectAuthUserProfile } from 'src/features/auth/authSlice';
 
-import { menu } from '../../../../utils/enum';
+import { menu } from 'src/utils/enum';
 
 import { BiLogOut } from 'react-icons/bi';
 
 import './Sidebar.scss';
 
-const handleLogOut = () => {
-  return;
-};
-
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const currentUser = useSelector(selectAuthUserProfile);
+
+  const handleLogOut = () => {
+    dispatch(authActions.logout());
+  };
+
   return (
     <div className='sbContainer'>
       <div className='sbLogo'>
@@ -44,8 +49,10 @@ const Sidebar = () => {
               />
             </div>
             <div className='sbProfileContent'>
-              <p className='sbProfileName'>quan pham</p>
-              <p className='sbProfileRole'>admin</p>
+              <p className='sbProfileName'>
+                {`${currentUser.infoUser.firstName} ${currentUser.infoUser.lastName}` || currentUser.role}
+              </p>
+              <p className='sbProfileRole'>{currentUser.role.toLowerCase()}</p>
             </div>
           </div>
           <div className='sbLogout' onClick={handleLogOut}>

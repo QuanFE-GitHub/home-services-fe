@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import { adminRoutes, authRoutes } from './routes/routes';
 
@@ -7,10 +8,13 @@ import AdminLayout from './layouts/adminLayout';
 import Home from './pages/user/home/Home';
 import Error from './pages/error';
 import ProtectedRoutes from './components/protectedRoutes';
+import { history } from './utils/history';
+import CustomRouter from './components/customRouter';
 
 function App() {
   return (
-    <Router>
+    // <Router>
+    <CustomRouter history={history}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='*' element={<Error />} />
@@ -46,7 +50,8 @@ function App() {
           </Route>
         </Route>
       </Routes>
-    </Router>
+    </CustomRouter>
+    // </Router>
   );
 }
 
