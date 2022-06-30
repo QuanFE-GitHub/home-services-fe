@@ -46,10 +46,6 @@ const filterOptions = {
 const Services = () => {
   const [sidebar, setSideBar] = useState(false);
 
-  useEffect(() => {
-    servicesApi.getAll().then((response) => console.log(response));
-  });
-
   return (
     <div id='services' className='services'>
       <BeadCrumbs title='Services' beadCrumbs={beadCrumbs} />

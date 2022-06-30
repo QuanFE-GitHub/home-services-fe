@@ -36,7 +36,7 @@ export const menu = [
 
 export const customerTableHeader = ['customer', 'email', 'phone', 'age', 'action'];
 
-export const LocalStorage = {
+export const LocalStorageAuth = {
   ACCESS_TOKEN: 'access_token',
   USER_PROFILE: 'user_profile',
 };

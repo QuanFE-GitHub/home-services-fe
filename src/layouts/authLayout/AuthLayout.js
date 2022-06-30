@@ -6,6 +6,7 @@ import loginBanner from '../../assets/images/loginBanner.jpg';
 import './AuthLayout.scss';
 
 const AuthLayout = () => {
+  console.log(`[AuthLayout] render`);
   return (
     <section id='login' className='loginContainer'>
       <div className='loginBanner'>

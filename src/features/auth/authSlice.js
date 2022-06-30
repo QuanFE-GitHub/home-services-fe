@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { LocalStorage } from 'src/utils/enum';
+import { LocalStorageAuth } from 'src/utils/enum';
 
 /**
  * accessToken<string>: token
@@ -8,16 +8,22 @@ import { LocalStorage } from 'src/utils/enum';
  * message<string>: notification user dispatch action
  */
 const initialState = {
-  accessToken: localStorage.getItem(LocalStorage.ACCESS_TOKEN) || null,
-  userProfile: localStorage.getItem(LocalStorage.USER_PROFILE) || null,
+  accessToken: localStorage.getItem(LocalStorageAuth.ACCESS_TOKEN) || null,
+  userProfile: JSON.parse(localStorage.getItem(LocalStorageAuth.USER_PROFILE)) || {},
   isLoading: false,
   message: null,
+  isStatus: null,
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
+    resetStatus(state) {
+      state.isStatus = null;
+      state.message = null;
+    },
+
     login(state) {
       state.isLoading = true;
     },
@@ -28,9 +34,9 @@ const authSlice = createSlice({
       state.userProfile = action.payload.user;
     },
 
-    loginFailed(state, action) {
+    loginFailure(state, action) {
       state.isLoading = false;
-      state.status = false;
+      state.isStatus = false;
       state.message = action.payload;
     },
   },
@@ -43,5 +49,9 @@ export const authActions = authSlice.actions;
 export const selectAuthToken = (state) => state.auth.accessToken;
 export const selectAuthLoading = (state) => state.auth.isLoading;
 export const selectAuthUserProfile = (state) => state.auth.userProfile;
-export const selectAuthStatus = (state) => state.auth.status;
 export const selectAuthMessage = (state) => state.auth.message;
+export const selectAuthStatus = (state) => state.auth.isStatus;
+
+// Reducer
+const authReducer = authSlice.reducer;
+export default authReducer;
