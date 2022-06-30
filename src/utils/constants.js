@@ -8,6 +8,12 @@ export const authURL = {
   forgotPassword: 'forgot-password',
   createNewPassword: 'create-new-password',
 };
+
+// LocalStorageAuth
+export const localStorageAuth = {
+  ACCESS_TOKEN: 'access_token',
+  USER_PROFILE: 'user_profile',
+};
 export const regexEmail = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
 
 export const regexPassword =
