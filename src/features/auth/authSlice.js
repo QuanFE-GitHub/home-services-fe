@@ -19,11 +19,6 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    resetStatus(state) {
-      state.isStatus = null;
-      state.message = null;
-    },
-
     login(state) {
       state.isLoading = true;
     },
@@ -38,6 +33,12 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.isStatus = false;
       state.message = action.payload;
+    },
+
+    logout(state) {
+      state.isLoading = false;
+      state.accessToken = null;
+      state.userProfile = {};
     },
   },
 });
