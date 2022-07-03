@@ -32,6 +32,21 @@ export const menu = [
   },
 ];
 
+export const menuUser = [
+  {
+    path: '/',
+    title: 'trang chủ',
+  },
+  {
+    path: '/services',
+    title: 'dịch vụ',
+  },
+  {
+    path: '/about',
+    title: 'giới thiệu',
+  },
+];
+
 export const customerTableHeader = ['customer', 'email', 'phone', 'age', 'action'];
 
 export const LocalStorageAuth = {

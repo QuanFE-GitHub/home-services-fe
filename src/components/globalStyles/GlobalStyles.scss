@@ -175,3 +175,21 @@ button {
   color: white;
   background: var(--first-color);
 }
+
+.btn {
+  padding: 0 1.5rem;
+  height: 46px;
+  line-height: 46px;
+  border-radius: 0.25rem;
+  background-color: var(--first-color);
+  color: white;
+  max-width: max-content;
+  font-size: var(--small-font-size);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  box-shadow: var(--normal-shadow);
+}
