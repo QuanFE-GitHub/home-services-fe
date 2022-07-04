@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import loginBanner from '../../assets/images/loginBanner.jpg';
+// import loginBanner from '../../assets/images/background-login-1.png';
 
 import './AuthLayout.scss';
 

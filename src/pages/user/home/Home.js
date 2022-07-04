@@ -4,6 +4,7 @@ import './Home.scss';
 
 import bannerImg from 'src/assets/images/banner.svg';
 import About from '../components/about';
+import AboutBanner from '../components/aboutBanner';
 
 const Home = () => {
   return (
@@ -28,6 +29,10 @@ const Home = () => {
         </div>
         <section className='aboutContainer'>
           <About />
+        </section>
+
+        <section className='homeAboutBanner'>
+          <AboutBanner />
         </section>
       </div>
     </div>
