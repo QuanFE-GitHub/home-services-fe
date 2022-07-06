@@ -3,6 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   padding-top: 200px;
   align-items: center;
+  row-gap: 100px;
 }
 
 .aboutBannerImg {
@@ -57,4 +58,9 @@
 .aboutBannerReviewItemTitle {
   font-size: var(--h3-font-size);
   font-weight: var(--font-semi-bold);
+}
+
+//
+.aboutBottomBoxImg {
+  position: relative;
 }
