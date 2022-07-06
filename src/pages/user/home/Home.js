@@ -5,6 +5,7 @@ import './Home.scss';
 import bannerImg from 'src/assets/images/banner.svg';
 import About from '../components/about';
 import AboutBanner from '../components/aboutBanner';
+import Footer from '../components/footer';
 
 const Home = () => {
   return (
@@ -34,6 +35,8 @@ const Home = () => {
         <section className='homeAboutBanner'>
           <AboutBanner />
         </section>
+
+        <Footer />
       </div>
     </div>
   );
