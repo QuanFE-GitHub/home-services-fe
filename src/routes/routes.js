@@ -2,6 +2,8 @@ import Login from 'src/pages/auth/login/index';
 import ForgotPassword from 'src/pages/auth/forgotPassword/index';
 import NewPassword from 'src/pages/auth/newPassword/index';
 import Services from '../pages/admin/services';
+import ServicesCustomer from 'src/pages/user/services';
+import About from 'src/pages/user/about/About';
 
 import Requests from 'src/pages/admin/requests';
 
@@ -28,6 +30,8 @@ export const routerPaths = {
   CREATE: 'create',
   EDIT: 'edit',
   ID: 'id',
+
+  ABOUT: 'about',
 };
 
 export const exactRouter = {
@@ -86,15 +90,20 @@ export const adminRoutes = [
   {
     path: `${routerPaths.CUSTOMERS}`,
     component: Customers,
-    // children: [
-    //   {
-    //     component: CustomerList,
-    //     index: true,
-    //   },
-    // ],
   },
   {
     path: `${routerPaths.EMPLOYEES}`,
     component: Employees,
+  },
+];
+
+export const userRoutes = [
+  {
+    path: `${routerPaths.SERVICES}`,
+    component: ServicesCustomer,
+  },
+  {
+    path: `${routerPaths.ABOUT}`,
+    component: About,
   },
 ];

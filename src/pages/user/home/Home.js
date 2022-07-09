@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/header';
+import helpFunction from 'src/utils/help';
 import './Home.scss';
 
 import bannerImg from 'src/assets/images/banner.svg';
@@ -8,6 +9,8 @@ import AboutBanner from '../components/aboutBanner';
 import Footer from '../components/footer';
 
 const Home = () => {
+  helpFunction.useScrollToTop();
+
   return (
     <div className='homePage'>
       <div className='homePageContainer'>
