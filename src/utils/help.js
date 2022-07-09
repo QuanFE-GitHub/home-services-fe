@@ -19,8 +19,18 @@ function useOutside(ref, setOpen) {
   }, [ref, setOpen]);
 }
 
+function useScrollToTop() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
+}
+
 const helpFunction = {
   useOutside,
+  useScrollToTop,
 };
 
 export default helpFunction;
