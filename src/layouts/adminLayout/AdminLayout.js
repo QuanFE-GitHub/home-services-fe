@@ -1,11 +1,18 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 import './AdminLayout.scss';
 
 import Sidebar from './components/sidebar';
 
 const AdminLayout = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate('services');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className='adContainer'>
       <Sidebar />
