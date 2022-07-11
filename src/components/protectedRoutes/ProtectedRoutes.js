@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useParams } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 // import { selectAuthToken } from 'src/features/auth/authSlice';
 
