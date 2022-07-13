@@ -10,8 +10,6 @@ import { authActions, selectAuthStatus } from 'src/features/auth/authSlice';
 
 import { regexEmail, regexPassword } from 'src/utils/constants';
 
-import './Login.scss';
-
 const schema = yup.object().shape({
   email: yup.string().required('Vui lòng nhập email').matches(regexEmail, 'Sai định dạng email'),
   password: yup
@@ -20,7 +18,7 @@ const schema = yup.object().shape({
     .matches(regexPassword, 'Mật khẩu bao gồm chữ in hoa, chữ thường, số, ký tự đặc biệt và ít nhất 8 ký tự.'),
 });
 
-const Login = () => {
+const LoginCustomer = () => {
   console.log(`[Login] render`);
 
   const dispatch = useDispatch();
@@ -47,7 +45,7 @@ const Login = () => {
       <h1 className='loginTitle'>
         Welcome <br /> to Home Services
       </h1>
-      <h3 className='loginRole'>Admin</h3>
+      <h3 className='loginRole'>Customer</h3>
 
       <form className='loginForm' onSubmit={handleSubmit(onSubmit)}>
         <div className='loginFormGroup'>
@@ -77,15 +75,19 @@ const Login = () => {
           {errors.password && <p className='loginValidate'>{errors.password?.message}</p>}
         </div>
 
-        <Link className='loginForgot' to={`/admin/${exactRouter.forgotPassword}`}>
+        <Link className='loginForgot' to={`/${exactRouter.forgotPassword}`}>
           Forgot Password
         </Link>
         <div className='loginBtn'>
           <input type='submit' value='Sign In' />
         </div>
+
+        <Link className='loginForgot' to={`/${exactRouter.forgotPassword}`}>
+          Register
+        </Link>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default LoginCustomer;

@@ -1,12 +1,10 @@
 import React from 'react';
-import Header from '../components/header';
 import helpFunction from 'src/utils/help';
 import './Home.scss';
 
 import bannerImg from 'src/assets/images/banner.svg';
 import About from '../components/about';
 import AboutBanner from '../components/aboutBanner';
-import Footer from '../components/footer';
 
 const Home = () => {
   helpFunction.useScrollToTop();
@@ -14,7 +12,6 @@ const Home = () => {
   return (
     <div className='homePage'>
       <div className='homePageContainer'>
-        <Header />
         <div className='banner'>
           <div className='bannerContent'>
             <div className='bannerTitle'>
@@ -38,8 +35,6 @@ const Home = () => {
         <section className='homeAboutBanner'>
           <AboutBanner />
         </section>
-
-        <Footer />
       </div>
     </div>
   );

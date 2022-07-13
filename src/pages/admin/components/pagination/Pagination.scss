@@ -19,6 +19,7 @@
 .paginationNum {
   width: 32px;
   height: 32px;
+  border-radius: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +45,6 @@
 
 // Pagination Active
 .paginationActive {
-  border-radius: 32px;
   color: white !important;
   background-color: var(--first-color);
 }

@@ -1,7 +1,7 @@
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 
-import { adminRoutes, authRoutes, userRoutes } from './routes/routes';
+import { adminRoutes, authAdminRoutes, authRoutes, userRoutes } from './routes/routes';
 
 import AuthLayout from './layouts/authLayout';
 import AdminLayout from './layouts/adminLayout';
@@ -17,8 +17,17 @@ function App() {
     // <Router>
     <CustomRouter history={history}>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route element={<CustomerLayout />}>
+          <Route path='/' element={<Home />} />
+        </Route>
         <Route path='*' element={<Error />} />
+
+        <Route path='admin/auth' element={<AuthLayout />}>
+          {authAdminRoutes.map((route, index) => {
+            const Page = route.component;
+            return <Route key={index} index={route.index} path={route.path} element={<Page />} />;
+          })}
+        </Route>
 
         <Route path='auth' element={<AuthLayout />}>
           {authRoutes.map((route, index) => {
