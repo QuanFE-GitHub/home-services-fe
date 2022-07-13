@@ -1,4 +1,5 @@
 import Login from 'src/pages/auth/login/index';
+import LoginCustomer from 'src/pages/auth/loginCustomer';
 import ForgotPassword from 'src/pages/auth/forgotPassword/index';
 import NewPassword from 'src/pages/auth/newPassword/index';
 import Services from '../pages/admin/services';
@@ -39,6 +40,7 @@ export const exactRouter = {
   auth: `${routerPaths.AUTH}`,
   signIn: `${routerPaths.AUTH}/${routerPaths.LOGIN}`,
   forgotPassword: `${routerPaths.AUTH}/${routerPaths.FORGOT_PASSWORD}`,
+  createNewPassword: `${routerPaths.AUTH}/${routerPaths.CREATE_NEW_PASSWORD}`,
 
   // Services
   services: `${routerPaths.ADMIN}/${routerPaths.SERVICES}`,
@@ -59,11 +61,29 @@ export const exactRouter = {
   editEmployees: `${routerPaths.ADMIN}/${routerPaths.EMPLOYEES}/:${routerPaths.ID}`,
 };
 
-export const authRoutes = [
+export const authAdminRoutes = [
   {
     index: true,
     path: `${routerPaths.LOGIN}`,
     component: Login,
+  },
+  {
+    index: false,
+    path: `${routerPaths.FORGOT_PASSWORD}`,
+    component: ForgotPassword,
+  },
+  {
+    index: false,
+    path: `${routerPaths.CREATE_NEW_PASSWORD}`,
+    component: NewPassword,
+  },
+];
+
+export const authRoutes = [
+  {
+    index: true,
+    path: `${routerPaths.LOGIN}`,
+    component: LoginCustomer,
   },
   {
     index: false,

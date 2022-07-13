@@ -9,6 +9,7 @@
   // Variables
   // Colors
   --first-color: hsl(239, 100%, 64%);
+  --first-color-alt: hsl(239, 100%, 54%);
   --first-color-light: hsl(227, 100%, 95%);
   --second-color: #7367f0;
   --second-color-light: #6258cc;
@@ -191,5 +192,5 @@ button {
 }
 
 .btn:hover {
-  box-shadow: var(--normal-shadow);
+  background-color: var(--first-color-alt);
 }

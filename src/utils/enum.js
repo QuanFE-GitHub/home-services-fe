@@ -53,3 +53,5 @@ export const LocalStorageAuth = {
   ACCESS_TOKEN: 'access_token',
   USER_PROFILE: 'user_profile',
 };
+
+export const listFilterServices = ['Mặc định', 'Tăng dần', 'Giảm dần'];

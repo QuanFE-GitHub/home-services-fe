@@ -1,11 +1,40 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { regexEmail } from 'src/utils/constants';
 import { exactRouter } from 'src/routes/routes';
 import './ForgotPassword.scss';
 
+const schema = yup.object().shape({
+  email: yup.string().required('Vui lòng nhập email').matches(regexEmail, 'Sai định dạng email'),
+});
+
 const ForgotPassword = () => {
   const [email, setEmail] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = () => {
+    setEmail(true);
+  };
+
+  const backToLogin = () => {
+    if (location.pathname === `/admin/${exactRouter.forgotPassword}`) {
+      navigate(`/admin/${exactRouter.signIn}`);
+    } else if (location.pathname === `/${exactRouter.forgotPassword}`) {
+      navigate(`/${exactRouter.signIn}`);
+    }
+  };
 
   return (
     <div id='forgotPassword'>
@@ -23,6 +52,7 @@ const ForgotPassword = () => {
             <button type='button' className='fpBtn'>
               Open email
             </button>
+            <Link to={`/admin/auth/create-new-password`}>new</Link>
             <div className='fpResendText'>
               <span>Did’t receive the link? </span>
               <span className='fpResend'>Resend</span>
@@ -30,22 +60,28 @@ const ForgotPassword = () => {
           </>
         ) : (
           <>
-            <form className='fpForm'>
+            <form className='fpForm' onSubmit={handleSubmit(onSubmit)}>
               <div className='fpFormGroup'>
                 <label htmlFor='email' className='fpLabel'>
                   Email
                 </label>
-                <input type='email' id='email' name='email' className='fpInputField' />
-                <p className='fpValidateText'>Vui lòng nhập email</p>
+                <input
+                  type='email'
+                  id='email'
+                  name='email'
+                  className={`loginInputTxt ${errors.email && 'loginInputTxtError'}`}
+                  {...register('email')}
+                />
+                {errors.email && <p className='loginValidate'>{errors.email?.message}</p>}
               </div>
-              <button type='button' className='fpBtn' onClick={() => setEmail(true)}>
+              <button type='submit' className='fpBtn'>
                 Send forgot password
               </button>
             </form>
 
-            <Link to={`/${exactRouter.auth}`} className='fpLink'>
+            <div onClick={backToLogin} className='fpLink'>
               Back to Log In
-            </Link>
+            </div>
           </>
         )}
       </div>
